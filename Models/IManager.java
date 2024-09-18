@@ -12,7 +12,7 @@ import java.util.List;
  */
 public interface IManager<T> {
     public boolean add(T element);
-    
+     
     public T get(T element);
         
     public boolean set(T element);
@@ -21,3 +21,4 @@ public interface IManager<T> {
         
     public List getAll();
 }
+

@@ -20,7 +20,7 @@ import java.util.Scanner;
  */
 public class CustomerConsole implements IView<Customer> {
     CustomerController controller;
-
+    
     public void setController(CustomerController controller) {
         this.controller = controller;
     }
