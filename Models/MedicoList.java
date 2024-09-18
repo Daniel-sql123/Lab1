@@ -5,7 +5,6 @@
 package Models;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 
 /**
@@ -14,10 +13,10 @@ import java.util.List;
  */
 public class MedicoList implements IManager<Medico> {
 
-    public HashMap<Medico> medicosLista;
- 
-     public MedicoList() {
-        this.medicosLista = new Hash<>();
+    private final List<Medico> medicosLista;
+
+    public MedicoList() {
+        medicosLista = new ArrayList<>();
     }
 
     @Override
@@ -66,7 +65,7 @@ public class MedicoList implements IManager<Medico> {
         if (medicosLista.isEmpty()) {
             return null;
         }
-        return new ArrayList<>(medicosLista.values()); //cambia de hashmap a array
+        return medicosLista;
     }
     
 }
