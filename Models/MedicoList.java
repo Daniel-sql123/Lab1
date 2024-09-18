@@ -4,10 +4,69 @@
  */
 package Models;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+
 /**
  *
  * @author dashs
  */
-public class MedicoList {
+public class MedicoList implements IManager<Medico> {
+
+    public HashMap<Medico> medicosLista;
+ 
+     public MedicoList() {
+        this.medicosLista = new Hash<>();
+    }
+
+    @Override
+    public boolean add(Medico medico) {
+        Medico current = get(medico);
+        if(current!=null)
+            return false;
+        medicosLista.add(medico);
+        return true;
+    }
+
+    @Override
+    public Medico get(Medico medico) {
+        for (Medico current : medicosLista) {
+            if (current.getId() == medico.getId()) {
+                return current;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public boolean set(Medico medico) {
+        if (medico != null) {
+            Medico current=get(medico);
+            if (current != null){
+                medicosLista.remove(current);
+                medicosLista.add(medico);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public boolean remove(Medico medico) {
+        if (medico != null && get(medico)!=null) {
+            medicosLista.remove(medico);
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public List<Medico> getAll() {
+        if (medicosLista.isEmpty()) {
+            return null;
+        }
+        return new ArrayList<>(medicosLista.values()); //cambia de hashmap a array
+    }
     
 }
