@@ -11,14 +11,15 @@ import java.util.List;
  * @author jprod
  */
 public interface IManager<T> {
+
     public boolean add(T element);
-     
+
     public T get(T element);
-        
+
     public boolean set(T element);
 
     public boolean remove(T element);
-        
+    //Obtener todo  
+
     public List getAll();
 }
-

@@ -8,7 +8,7 @@ import Controllers.CustomerController;
 import Models.CustomerList;
 import Models.CustomertSet;
 import Views.CustomerConsole;
-import Views.CustomerFrame;
+import Views.MenuFrame;
 
 /**
  *
@@ -26,7 +26,7 @@ public class CustomerMain {
         //CustomerFrame Frame = new CustomerFrame();
         view.setController(controller);
         //view.CustomerFrame(Frame);
-        CustomerFrame fram = new CustomerFrame();
+        MenuFrame fram = new MenuFrame();
         fram.setVisible(true);
         view.show();
        
